@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 
-var db = require('db/connect');
+var db = require('./db/connect');
 
 app.set('port', (process.env.PORT || 5000));
 
