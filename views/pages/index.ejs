@@ -8,8 +8,12 @@
 
 <div class="wrapper">
   <% include ../partials/header.ejs %>
-
-  <button class="new-student" value="добавить студента"> новый студент</button>
+  <form action="" id="students_list">
+    <input name="name" type="text" placeholder="имя">
+    <input name="role" type="text" placeholder="роль">
+    <input name="domain" type="text" placeholder="личная страница">
+  </form>
+  <button class="new-student" value="добавить студента" id="new-student"> новый студент</button>
   <!-- <% include ../partials/nav.ejs %> -->
 
 <!-- <div class="jumbotron text-center">
