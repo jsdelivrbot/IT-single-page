@@ -14,7 +14,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  const text= 'CREATE TABLE IF NOT EXISTS student("student_id" SERIAL PRIMARY KEY, "name" varchar(255), "subgroup" varchar(255), "role" varchar(255), "domain" varchar(255), "modulefirst" integer, "modulesecond" integer)';
+  const text= 'CREATE TABLE IF NOT EXISTS student("student_id" SERIAL PRIMARY KEY, "name" varchar(255), "role" varchar(255), "subgroup" varchar(255), "domain" varchar(255), "modulefirst" integer, "project" varchar(255),"modulesecond" integer)';
   const users = [];
   client.query(text, (err, res) => {
     if (err) throw err;
@@ -41,8 +41,8 @@ app.post('/', function(req, res, next) {
 
     req.on('end', function () {
         reqBody = JSON.parse(reqBody);
-        var sql = "INSERT INTO student(name, subgroup, role, domain, modulefirst, modulesecond) VALUES" +
-        "('" + reqBody.name + "', '" + reqBody.subgroup + "', '" + reqBody.role +"', '" + reqBody.domain + "','" + reqBody.module_first + "', '" + reqBody.module_second + "')";
+        var sql = "INSERT INTO student(name, subgroup, role, domain, modulefirst, project, modulesecond) VALUES" +
+        "('" + reqBody.name + "', '" + reqBody.subgroup + "', '" + reqBody.role +"', '" + reqBody.domain + "','" + reqBody.module_first + "', '" + reqBody.project + "','" + reqBody.module_second + "')";
          client.query(sql, function(err, res){
           if (err) {
               console.log(err.stack)
