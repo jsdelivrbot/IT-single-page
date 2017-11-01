@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <% include ../partials/header.ejs %>
+  <form action="" id="students_list">
+    <input name="name" type="text" placeholder="имя">
+    <input name="subgroup" type="text" placeholder="подгруппа">
+    <input name="domain" type="text" placeholder="роль">
+    <input name="role" type="text" placeholder="личная страница">
+    <input name="module_first" type="number" placeholder="первый модуль">
+    <input name="project" type="text" placeholder="проект">
+    <input name="module_second" type="number" placeholder="второй модуль">
+  </form>
+  <button class="new-student" value="добавить студента" id="new-student"> новый студент</button>
